@@ -4,14 +4,14 @@ import h5py
 import scipy
 from PIL import Image
 from lr_utils import load_dataset
-
+# load dataset
 train_set_x_orig, train_set_y, test_set_x_orig, test_set_y, classes = load_dataset()
 
-# Example of a picture
+# if you want to check the pictures , use code below & change the costs plot to comment in the last line of code:
+
 # index =3
 # plt.imshow(train_set_x_orig[index])
 # print ("y = " + str(train_set_y[0, index]) + ", it's a '" + classes[np.squeeze(train_set_y[:, index])].decode("utf-8") +  "' picture.")
-
 # plt.show()
 
 train_set_x_flatten = train_set_x_orig.reshape(train_set_x_orig.shape[1]*train_set_x_orig.shape[2]*train_set_x_orig.shape[3],train_set_x_orig.shape[0])
@@ -56,14 +56,9 @@ def predict(w, b, X):
 train_pred = predict(w,b,train_set_x_flatten)
 test_pred = predict(w,b,test_set_x_flatten)
 
-print()
-print(train_pred)
-print(train_set_y)
+
 print()
 print("train accuracy: {} %".format(100 - np.mean(np.abs(train_pred - train_set_y)) * 100))
-print()
-print(test_pred)
-print(test_set_y)
 print()
 print("test accuracy: {} %".format(100 - np.mean(np.abs(test_pred - test_set_y)) * 100))
 
@@ -72,3 +67,4 @@ plt.plot(costs)
 plt.ylabel('cost')
 plt.xlabel('iterations (per hundreds)')
 plt.show()
+
