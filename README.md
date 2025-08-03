@@ -25,6 +25,8 @@ This project implements a simple logistic regression model to classify images as
 3. Trains the model using logistic regression + gradient descent
 4. Plots cost reduction over iterations
 5. Predicts labels and prints accuracy on both training and test sets
+6. notice that you can see any of the dataset's pictures you want by uncommenting the commented part of code , and change the index variable to change the picture number!
+7. feel free to change the hyperparameters 'learning rate' and 'iteration count' ! maybe you found more optimizer hyperparameters!
 
 ---
 
